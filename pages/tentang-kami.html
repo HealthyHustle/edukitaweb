@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tentang EduKita - Misi kami mendemokratisasi akses pendidikan privat berkualitas di Indonesia melalui tutor terkurasi dari kampus terbaik." />
+  <meta name="theme-color" content="#0284c7" />
+  <title>Tentang Kami - EduKita</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" aria-label="EduKita Beranda">
+        <div class="brand-icon-box">
+          <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Beranda</a>
+        <a href="cari-tutor.html" class="nav-item">Cari Tutor</a>
+        <a href="../index.html#kategori" class="nav-item">Mata Pelajaran</a>
+        <a href="register-tutor.html" class="nav-item">Jadi Tutor</a>
+        <a href="tentang-kami.html" class="nav-item active">Tentang Kami</a>
+      </nav>
+
+      <div class="nav-auth nav-auth-slot">
+        <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Daftar Akun</a>
+      </div>
+
+      <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Buka Menu">
+        <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon-box" style="width: 36px; height: 36px;">
+          <i data-lucide="graduation-cap" style="width: 20px; height: 20px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </div>
+      <button type="button" class="modal-close-btn" id="mobile-drawer-close">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="../index.html" class="nav-item">Beranda</a>
+      <a href="cari-tutor.html" class="nav-item">Cari Tutor</a>
+      <a href="register-tutor.html" class="nav-item">Jadi Tutor</a>
+      <a href="tentang-kami.html" class="nav-item active">Tentang Kami</a>
+    </div>
+
+    <div class="nav-auth-slot" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="login.html" class="btn btn-secondary btn-block">Masuk</a>
+      <a href="register.html" class="btn btn-primary btn-block">Daftar Akun</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Header Section -->
+    <section class="section" style="background: var(--gradient-hero); padding: 5rem 0 3.5rem 0;">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="section-tag">Misi &amp; Nilai Kami</span>
+        <h1 class="section-title" style="font-size: 2.75rem; margin-bottom: 1.25rem;">
+          Membangun Masa Depan Pendidikan Indonesia yang Lebih Personal &amp; Inklusif
+        </h1>
+        <p class="section-subtitle" style="font-size: 1.125rem;">
+          EduKita lahir dari keyakinan bahwa setiap siswa memiliki ritme belajar yang unik. Dengan tutor yang tepat, kesulitan akademis berubah menjadi prestasi yang membanggakan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Prinsip Kami</span>
+          <h2 class="section-title">Nilai Utama EduKita</h2>
+          <p class="section-subtitle">Tiga pilar yang menjadi panduan layanan bimbingan belajar kami.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2.5rem;">
+            <div style="width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--primary-50); color: var(--primary-600); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+              <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--navy-900); margin-bottom: 0.75rem;">Kurasi Akademik Teruji</h3>
+            <p style="color: var(--navy-600); font-size: 0.9375rem; line-height: 1.7;">
+              Hanya 15% pelamar tutor yang lolos proses seleksi verifikasi ijazah, latar belakang, dan simulasi micro-teaching kami.
+            </p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2.5rem;">
+            <div style="width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--accent-green-light); color: var(--accent-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+              <i data-lucide="target" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--navy-900); margin-bottom: 0.75rem;">Pembelajaran Berbasis Konsep</h3>
+            <p style="color: var(--navy-600); font-size: 0.9375rem; line-height: 1.7;">
+              Kami menentang hafalan rumus cepat tanpa pemahaman. Siswa dibimbing menguasai logika mendasar agar siap menghadapi ragam soal HOTS.
+            </p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2.5rem;">
+            <div style="width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--accent-gold-light); color: var(--accent-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+              <i data-lucide="heart" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--navy-900); margin-bottom: 0.75rem;">Garansi Kecocokan Tutor</h3>
+            <p style="color: var(--navy-600); font-size: 0.9375rem; line-height: 1.7;">
+              Hubungan emosional antara guru dan murid adalah kunci. Jika setelah sesi awal dirasa tidak cocok, kami carikan tutor pengganti secara gratis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Numbers -->
+    <section class="section section-bg-alt">
+      <div class="container" style="text-align: center;">
+        <h2 class="section-title">Dampak Nyata yang Telah Kami Hadirkan</h2>
+        <p class="section-subtitle" style="margin-bottom: 3rem;">
+          Sejak didirikan, EduKita telah mendampingi ribuan siswa di lebih dari 25 kota di Indonesia.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-item" style="justify-content: center;">
+            <div>
+              <div class="stat-number" style="color: var(--primary-600);">15.200+</div>
+              <div class="stat-label">Siswa Aktif Terbimbing</div>
+            </div>
+          </div>
+          <div class="stat-item" style="justify-content: center;">
+            <div>
+              <div class="stat-number" style="color: var(--primary-600);">2.450+</div>
+              <div class="stat-label">Tutor Terverifikasi</div>
+            </div>
+          </div>
+          <div class="stat-item" style="justify-content: center;">
+            <div>
+              <div class="stat-number" style="color: var(--accent-green);">98.4%</div>
+              <div class="stat-label">Lolos Seleksi SNBT / Ujian</div>
+            </div>
+          </div>
+          <div class="stat-item" style="justify-content: center;">
+            <div>
+              <div class="stat-number" style="color: var(--accent-gold);">4.95 / 5.0</div>
+              <div class="stat-label">Rata-rata Rating Ulasan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>© 2026 EduKita Indonesia. Hak Cipta Dilindungi Undang-Undang.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="../index.html" class="footer-link">Beranda</a>
+          <a href="cari-tutor.html" class="footer-link">Cari Tutor</a>
+          <a href="register-tutor.html" class="footer-link">Jadi Tutor</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard Mitra Tutor EduKita - Kelola permintaan sesi belajar murid, jadwal mengajar, dan ringkasan pendapatan." />
+  <meta name="theme-color" content="#0284c7" />
+  <title>Dashboard Mitra Tutor - EduKita</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" aria-label="EduKita Beranda">
+        <div class="brand-icon-box">
+          <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Beranda</a>
+        <a href="cari-tutor.html" class="nav-item">Lihat Katalog Tutor</a>
+        <a href="dashboard-tutor.html" class="nav-item active">Dashboard Tutor</a>
+        <a href="tentang-kami.html" class="nav-item">Bantuan</a>
+      </nav>
+
+      <div class="nav-auth nav-auth-slot">
+        <!-- Profile Slot populated by script.js -->
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div style="margin-bottom: 2rem; padding: 0.5rem;">
+        <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Panel Pengajar</span>
+      </div>
+
+      <nav class="dashboard-nav-list">
+        <a href="dashboard-tutor.html" class="dashboard-nav-item active">
+          <i data-lucide="inbox" style="width: 18px; height: 18px;"></i>
+          <span>Permintaan Masuk</span>
+        </a>
+        <a href="#jadwal" class="dashboard-nav-item">
+          <i data-lucide="calendar" style="width: 18px; height: 18px;"></i>
+          <span>Jadwal Mengajar</span>
+        </a>
+        <a href="#pendapatan" class="dashboard-nav-item">
+          <i data-lucide="wallet" style="width: 18px; height: 18px;"></i>
+          <span>Ringkasan Saldo</span>
+        </a>
+        <a href="detail-tutor.html?id=tutor-1" class="dashboard-nav-item">
+          <i data-lucide="user-check" style="width: 18px; height: 18px;"></i>
+          <span>Pratinjau Profil Publik</span>
+        </a>
+      </nav>
+
+      <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+        <div style="background: var(--navy-50); border-radius: var(--radius-md); padding: 1rem; border: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+            <i data-lucide="shield" style="width: 16px; height: 16px; color: var(--accent-green);"></i>
+            <span style="font-size: 0.8125rem; font-weight: 700; color: var(--navy-900);">Status: Terverifikasi</span>
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">
+            Lencana Tutor UI Terverifikasi aktif.
+          </p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+      <!-- Welcome Banner -->
+      <div class="dashboard-banner" style="background: var(--gradient-navy);">
+        <div>
+          <span style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #38bdf8;">Ruang Kerja Tutor</span>
+          <h1 style="font-size: 1.85rem; font-weight: 800; margin: 0.25rem 0 0.5rem 0;">
+            Semangat Mengajar, <span id="tutor-user-name">Rizky Megantara</span>! 🎓
+          </h1>
+          <p style="font-size: 0.9375rem; color: var(--navy-300); max-width: 520px;">
+            Terima permintaan bimbingan belajar baru dari murid dan konfirmasi waktu sesi mengajar.
+          </p>
+        </div>
+        <div style="text-align: right;">
+          <span style="display: block; font-size: 0.8125rem; color: var(--navy-300);">Rating Tutor</span>
+          <span style="font-size: 1.75rem; font-weight: 800; color: #f59e0b;">⭐ 4.95 / 5.0</span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="dashboard-metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <i data-lucide="bell" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div>
+            <div class="metric-value" id="metric-tutor-pending-count">1</div>
+            <div class="metric-title">Permintaan Menunggu Respon</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon" style="background: var(--accent-green-light); color: var(--accent-green);">
+            <i data-lucide="users" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div>
+            <div class="metric-value" id="metric-tutor-active-students">4</div>
+            <div class="metric-title">Siswa Bimbingan Aktif</div>
+          </div>
+        </div>
+
+        <div class="metric-card" id="pendapatan">
+          <div class="metric-icon" style="background: var(--accent-gold-light); color: var(--accent-gold);">
+            <i data-lucide="wallet" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div>
+            <div class="metric-value">Rp 3.850.000</div>
+            <div class="metric-title">Estimasi Pendapatan Bulan Ini</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon" style="background: var(--primary-100); color: var(--primary-700);">
+            <i data-lucide="clock" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div>
+            <div class="metric-value">35 Jam</div>
+            <div class="metric-title">Total Jam Mengajar</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Incoming Booking Requests -->
+      <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--navy-900);">Permintaan Sesi Belajar Masuk</h2>
+            <p style="font-size: 0.8125rem; color: var(--text-muted);">
+              Klik "Terima Sesi" untuk menyetujui jadwal dan memulai bimbingan.
+            </p>
+          </div>
+        </div>
+
+        <div id="tutor-requests-list">
+          <!-- Populated by script.js with interactive Terima & Tolak buttons -->
+        </div>
+      </div>
+
+      <!-- Section: Confirmed Teaching Schedule -->
+      <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem;" id="jadwal">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 0.35rem;">Jadwal Mengajar Terkonfirmasi</h2>
+        <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1.25rem;">Agenda bimbingan privat minggu ini.</p>
+        
+        <div id="tutor-confirmed-schedule-list">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

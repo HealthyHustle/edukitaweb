@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EduKita - Platform Bimbingan Belajar Privat 1-on-1 Terbaik di Indonesia. Temukan tutor terverifikasi dari UI, ITB, UGM untuk mata pelajaran SD, SMP, SMA, dan persiapan UTBK/SNBT." />
+  <meta name="theme-color" content="#0284c7" />
+  <title>EduKita - Les Privat & Bimbingan Belajar Berkualitas di Indonesia</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================== 1. TOP NAVIGATION ==================== -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="EduKita Beranda">
+        <div class="brand-icon-box">
+          <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Navigasi Utama">
+        <a href="index.html" class="nav-item active">Beranda</a>
+        <a href="pages/cari-tutor.html" class="nav-item">Cari Tutor</a>
+        <a href="#kategori" class="nav-item">Mata Pelajaran</a>
+        <a href="#cara-kerja" class="nav-item">Cara Kerja</a>
+        <a href="pages/register-tutor.html" class="nav-item">Jadi Tutor</a>
+        <a href="pages/tentang-kami.html" class="nav-item">Tentang Kami</a>
+      </nav>
+
+      <!-- Desktop Auth Slot (Dynamic via script.js) -->
+      <div class="nav-auth nav-auth-slot">
+        <a href="pages/login.html" class="btn btn-secondary btn-sm">Masuk</a>
+        <a href="pages/register.html" class="btn btn-primary btn-sm">Daftar Akun</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Buka Menu Navigasi">
+        <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Navigasi Mobile">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon-box" style="width: 36px; height: 36px;">
+          <i data-lucide="graduation-cap" style="width: 20px; height: 20px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </div>
+      <button type="button" class="modal-close-btn" id="mobile-drawer-close" aria-label="Tutup Menu">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="index.html" class="nav-item active">Beranda</a>
+      <a href="pages/cari-tutor.html" class="nav-item">Cari Tutor</a>
+      <a href="#kategori" class="nav-item">Mata Pelajaran</a>
+      <a href="#cara-kerja" class="nav-item">Cara Kerja</a>
+      <a href="pages/register-tutor.html" class="nav-item">Jadi Tutor</a>
+      <a href="pages/tentang-kami.html" class="nav-item">Tentang Kami</a>
+    </div>
+
+    <div class="nav-auth-slot" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="pages/login.html" class="btn btn-secondary btn-block">Masuk</a>
+      <a href="pages/register.html" class="btn btn-primary btn-block">Daftar Akun</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section class="hero" id="beranda">
+      <div class="hero-shape-1"></div>
+      <div class="hero-shape-2"></div>
+      <div class="container hero-grid">
+        <!-- Hero Left Column: Text & Search -->
+        <div class="hero-text-content">
+          <div class="hero-tag">
+            <i data-lucide="sparkles" style="width: 16px; height: 16px; color: #0284c7;"></i>
+            <span>Platform Les Privat #1 Terverifikasi di Indonesia</span>
+          </div>
+
+          <h1 class="hero-title">
+            Raih Prestasi &amp; Masuk PTN Impian Bersama <span class="text-gradient">Tutor Terbaik</span>
+          </h1>
+
+          <p class="hero-description">
+            Bimbingan belajar 1-on-1 interaktif, baik tatap muka di rumah maupun daring (online) fleksibel bersama mahasiswa berprestasi dan alumni teruji dari UI, ITB, UGM, UNAIR &amp; ITS.
+          </p>
+
+          <!-- Quick Search Bar -->
+          <form class="hero-quick-search" action="pages/cari-tutor.html" method="GET">
+            <div class="search-field-group">
+              <label for="hero-subject" class="search-label">Mata Pelajaran</label>
+              <select id="hero-subject" name="kategori" class="search-select">
+                <option value="semua">Semua Mata Pelajaran</option>
+                <option value="UTBK/SNBT">Persiapan UTBK / SNBT</option>
+                <option value="Matematika">Matematika</option>
+                <option value="Fisika">Fisika</option>
+                <option value="Kimia">Kimia</option>
+                <option value="Biologi">Biologi</option>
+                <option value="Bahasa Inggris">Bahasa Inggris</option>
+                <option value="Coding / Informatika">Coding &amp; Informatika</option>
+              </select>
+            </div>
+
+            <div class="search-field-group">
+              <label for="hero-mode" class="search-label">Metode Belajar</label>
+              <select id="hero-mode" name="filter-mode" class="search-select">
+                <option value="semua">Semua Metode</option>
+                <option value="Online">Online (Google Meet)</option>
+                <option value="Tatap Muka">Tatap Muka (Guru Datang)</option>
+              </select>
+            </div>
+
+            <div class="search-field-group">
+              <label for="hero-keyword" class="search-label">Kata Kunci / Kota</label>
+              <input type="text" id="hero-keyword" name="q" placeholder="Cth: SNBT, UI, Bandung" class="search-input" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="padding: 0.85rem 1.5rem;">
+              <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+              <span>Cari Tutor</span>
+            </button>
+          </form>
+
+          <!-- Trust Badges -->
+          <div class="hero-guarantee">
+            <div class="hero-guarantee-item">
+              <i data-lucide="check-circle-2" style="width: 18px; height: 18px; color: #10b981;"></i>
+              <span>Garansi Tutor Cocok</span>
+            </div>
+            <div class="hero-guarantee-item">
+              <i data-lucide="calendar-check" style="width: 18px; height: 18px; color: #0284c7;"></i>
+              <span>Jadwal Bebas &amp; Fleksibel</span>
+            </div>
+            <div class="hero-guarantee-item">
+              <i data-lucide="shield-check" style="width: 18px; height: 18px; color: #6366f1;"></i>
+              <span>Kurasi Akademik Ketat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Visual Composition -->
+        <div class="hero-visual-card">
+          <div class="hero-main-img-box">
+            <img 
+              src="assets/images/hero-illustration.jpg" 
+              alt="Ilustrasi Siswa dan Tutor EduKita Belajar Bersama" 
+              class="hero-main-img" 
+              loading="eager"
+            />
+          </div>
+
+          <!-- Top Floating Badge -->
+          <div class="hero-floating-badge badge-top-left">
+            <div class="badge-icon-wrap gold">
+              <i data-lucide="star" style="width: 22px; height: 22px; fill: #f59e0b;"></i>
+            </div>
+            <div>
+              <div class="badge-title">4.95 / 5.0 Rating</div>
+              <div class="badge-subtitle">15.000+ Ulasan Siswa Puas</div>
+            </div>
+          </div>
+
+          <!-- Bottom Floating Badge -->
+          <div class="hero-floating-badge badge-bottom-right">
+            <div class="badge-icon-wrap">
+              <i data-lucide="trophy" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div>
+              <div class="badge-title">98.4% Lolos SNBT</div>
+              <div class="badge-subtitle">Diterima di Kampus Impian</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. LIVE STATS STRIP ==================== -->
+    <section class="stats-strip" aria-label="Statistik Platform EduKita">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i data-lucide="users" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div>
+            <div class="stat-number">15.200+</div>
+            <div class="stat-label">Siswa Aktif Terbimbing</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i data-lucide="award" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div>
+            <div class="stat-number">2.450+</div>
+            <div class="stat-label">Tutor Terverifikasi &amp; Berpengalaman</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i data-lucide="graduation-cap" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div>
+            <div class="stat-number">98.4%</div>
+            <div class="stat-label">Tingkat Lolos SNBT &amp; Ujian</div>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i data-lucide="heart-handshake" style="width: 28px; height: 28px;"></i>
+          </div>
+          <div>
+            <div class="stat-number">4.9 / 5.0</div>
+            <div class="stat-label">Skor Kepuasan Orang Tua &amp; Siswa</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. SUBJECT CATEGORIES ==================== -->
+    <section class="section" id="kategori">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Katalog Pembelajaran</span>
+          <h2 class="section-title">Pilihan Bidang Studi &amp; Persiapan Ujian</h2>
+          <p class="section-subtitle">
+            Dari pemahaman konsep dasar di sekolah hingga bedah pola soal HOTS seleksi masuk perguruan tinggi negeri bersama tutor spesialis.
+          </p>
+        </div>
+
+        <div class="categories-grid">
+          <!-- Featured: UTBK/SNBT -->
+          <a href="pages/cari-tutor.html?kategori=UTBK/SNBT" class="category-card featured-utbk">
+            <div class="category-icon-box">
+              <i data-lucide="flame" style="width: 26px; height: 26px;"></i>
+            </div>
+            <h3 class="category-title">Persiapan UTBK / SNBT</h3>
+            <p class="category-desc">
+              TPS, Penalaran Matematika, Literasi Bahasa Indonesia &amp; Inggris dengan strategi pembobotan skor IRT.
+            </p>
+            <div class="category-footer">
+              <span>650+ Tutor Siap</span>
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </div>
+          </a>
+
+          <!-- Matematika -->
+          <a href="pages/cari-tutor.html?kategori=Matematika" class="category-card">
+            <div class="category-icon-box">
+              <i data-lucide="sigma" style="width: 26px; height: 26px;"></i>
+            </div>
+            <h3 class="category-title">Matematika (SD, SMP, SMA)</h3>
+            <p class="category-desc">
+              Aljabar, trigonometri, kalkulus, dan logika pola angka dengan penjelasan bertahap yang mudah dicerna.
+            </p>
+            <div class="category-footer">
+              <span>580+ Tutor Siap</span>
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </div>
+          </a>
+
+          <!-- Fisika & Kimia -->
+          <a href="pages/cari-tutor.html?kategori=Fisika" class="category-card">
+            <div class="category-icon-box">
+              <i data-lucide="atom" style="width: 26px; height: 26px;"></i>
+            </div>
+            <h3 class="category-title">Fisika &amp; Kimia (IPA)</h3>
+            <p class="category-desc">
+              Mekanika kuantum, stoikiometri, reaksi redoks, dan termodinamika melalui simulasi visual dan rumus praktis.
+            </p>
+            <div class="category-footer">
+              <span>420+ Tutor Siap</span>
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </div>
+          </a>
+
+          <!-- Biologi Kedokteran -->
+          <a href="pages/cari-tutor.html?kategori=Biologi" class="category-card">
+            <div class="category-icon-box">
+              <i data-lucide="dna" style="width: 26px; height: 26px;"></i>
+            </div>
+            <h3 class="category-title">Biologi &amp; Sains Terapan</h3>
+            <p class="category-desc">
+              Genetika molekuler, fisiologi hewan-tumbuhan, dan persiapan khusus seleksi Fakultas Kedokteran favorit.
+            </p>
+            <div class="category-footer">
+              <span>310+ Tutor Siap</span>
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </div>
+          </a>
+
+          <!-- Bahasa Inggris & TOEFL -->
+          <a href="pages/cari-tutor.html?kategori=Bahasa%20Inggris" class="category-card">
+            <div class="category-icon-box">
+              <i data-lucide="languages" style="width: 26px; height: 26px;"></i>
+            </div>
+            <h3 class="category-title">Bahasa Inggris &amp; TOEFL / IELTS</h3>
+            <p class="category-desc">
+              Peningkatan kepercayaan diri speaking, grammar akurat, dan strategi raih skor target beasiswa internasional.
+            </p>
+            <div class="category-footer">
+              <span>490+ Tutor Siap</span>
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </div>
+          </a>
+
+          <!-- Coding & Informatika -->
+          <a href="pages/cari-tutor.html?kategori=Coding%20/%20Informatika" class="category-card">
+            <div class="category-icon-box">
+              <i data-lucide="code" style="width: 26px; height: 26px;"></i>
+            </div>
+            <h3 class="category-title">Coding &amp; Informatika</h3>
+            <p class="category-desc">
+              Dasar algoritma pemrograman, Python, web development, dan olimpiade OSN Informatika bersama engineer muda.
+            </p>
+            <div class="category-footer">
+              <span>180+ Tutor Siap</span>
+              <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. FEATURED TUTORS PREVIEW ==================== -->
+    <section class="section section-bg-alt" id="tutor-unggulan">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <span class="section-tag">Tutor Pilihan</span>
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Profil Tutor Terbaik Minggu Ini</h2>
+            <p class="section-subtitle">Telah melewati seleksi akademik mendalam, verifikasi berkas, dan micro-teaching.</p>
+          </div>
+          <a href="pages/cari-tutor.html" class="btn btn-outline-primary">
+            Lihat Semua 2.400+ Tutor <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+          </a>
+        </div>
+
+        <div class="tutor-grid" id="featured-tutors-showcase">
+          <!-- Populated by script on page load or fallback cards below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. HOW IT WORKS (CARA KERJA) ==================== -->
+    <section class="section" id="cara-kerja">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Alur Mudah</span>
+          <h2 class="section-title">Cara Belajar di EduKita</h2>
+          <p class="section-subtitle">
+            Hanya butuh 3 langkah praktis untuk memulai bimbingan privat terarah bersama tutor impianmu.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.25rem; position: relative;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-100); color: var(--primary-600); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.25rem; margin-bottom: 1.25rem;">
+              1
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 0.75rem;">Pilih Tutor Sesuai Kriteria</h3>
+            <p style="color: var(--navy-600); font-size: 0.9375rem; line-height: 1.6;">
+              Gunakan filter mata pelajaran, kota tempat tinggal, jenjang kelas, metode belajar (online/offline), serta ulasan asli siswa sebelumnya.
+            </p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.25rem; position: relative;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-100); color: var(--primary-600); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.25rem; margin-bottom: 1.25rem;">
+              2
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 0.75rem;">Ajukan Jadwal Sesi</h3>
+            <p style="color: var(--navy-600); font-size: 0.9375rem; line-height: 1.6;">
+              Tentukan hari, jam, topik materi yang ingin dipelajari, serta durasi pertemuan. Kamu tidak dikenakan biaya saat pengajuan awal.
+            </p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.25rem; position: relative;">
+            <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-100); color: var(--primary-600); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.25rem; margin-bottom: 1.25rem;">
+              3
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--navy-900); margin-bottom: 0.75rem;">Mulai Belajar &amp; Evaluasi</h3>
+            <p style="color: var(--navy-600); font-size: 0.9375rem; line-height: 1.6;">
+              Nikmati pendampingan 1-on-1 yang fokus pada kelemahan spesifikmu. Dapatkan laporan kemajuan berkala dan bank soal eksklusif.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. BECOME A TUTOR CTA BANNER ==================== -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="cta-banner-wrapper">
+          <div class="cta-banner-grid">
+            <div>
+              <span class="badge badge-gold" style="margin-bottom: 1.25rem; font-size: 0.8125rem;">Peluang Karir Edukator</span>
+              <h2 class="cta-banner-title">Punya Passion Mengajar? Bergabung Menjadi Mitra Tutor EduKita</h2>
+              <p class="cta-banner-desc">
+                Raih penghasilan fleksibel, tentukan sendiri tarif serta jadwal mengajarmu, dan dampingi ribuan generasi muda berprestasi di seluruh Indonesia.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="pages/register-tutor.html" class="btn btn-primary btn-lg" style="background: #38bdf8; color: #0f172a; font-weight: 800;">
+                  Daftar Jadi Tutor Sekarang <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                </a>
+                <a href="pages/cari-tutor.html" class="btn btn-secondary btn-lg" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25);">
+                  Pelajari Komunitas Tutor
+                </a>
+              </div>
+            </div>
+
+            <div style="text-align: center;">
+              <img 
+                src="assets/images/tutor-banner.jpg" 
+                alt="Mitra Pengajar EduKita Berprestasi" 
+                class="cta-img-preview" 
+                loading="lazy" 
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. FAQ ACCORDION ==================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Pusat Bantuan</span>
+          <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+          <p class="section-subtitle">
+            Semua hal yang perlu kamu ketahui tentang sistem bimbingan belajar di EduKita.
+          </p>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item active">
+            <button type="button" class="faq-question-btn">
+              <span>Berapa kisaran tarif bimbingan les privat di EduKita?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" style="width: 20px; height: 20px;"></i>
+            </button>
+            <div class="faq-answer-panel">
+              Tarif belajar di EduKita sangat fleksibel dan transparan, berkisar antara Rp 75.000 hingga Rp 200.000 per jam pelajaran, tergantung pada jenjang kelas (SD/SMP/SMA/UTBK), metode pembelajaran (online via Google Meet atau tatap muka datang ke rumah), serta kualifikasi spesifik tutor.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>Apakah ada garansi jika siswa merasa kurang cocok dengan tutor?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" style="width: 20px; height: 20px;"></i>
+            </button>
+            <div class="faq-answer-panel">
+              Ya, kami menyediakan Garansi Tutor Cocok! Jika setelah sesi pertama siswa atau orang tua merasa gaya mengajar kurang sesuai, EduKita akan membantu merekomendasikan tutor pengganti tanpa biaya administrasi tambahan.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>Bagaimana cara kerja les daring (online) dibandingkan tatap muka?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" style="width: 20px; height: 20px;"></i>
+            </button>
+            <div class="faq-answer-panel">
+              Untuk les online, tutor menggunakan papan tulis digital interaktif (whiteboard online) dan tautan Google Meet langsung di platform EduKita. Sedangkan untuk les tatap muka, tutor datang langsung ke kediaman siswa atau bertemu di lokasi publik yang telah disepakati (seperti kafe belajar atau perpustakaan).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>Apakah saya harus membayar langsung saat mengajukan sesi?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" style="width: 20px; height: 20px;"></i>
+            </button>
+            <div class="faq-answer-panel">
+              Tidak. Pengajuan sesi belajar awal sepenuhnya gratis tanpa kewajiban bayar di muka. Pembayaran baru dilakukan setelah jadwal disetujui bersama oleh kedua belah pihak dan rencana belajar telah dikonfirmasi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 9. BOOKING MODAL (AJUKAN SESI) ==================== -->
+  <div class="edukita-modal" id="edukita-booking-modal" role="dialog" aria-labelledby="modal-booking-heading">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modal-booking-heading">Ajukan Sesi Belajar</h3>
+          <p style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.2rem;">
+            Bersama: <strong id="modal-booking-tutor-name">Nama Tutor</strong> (<span id="modal-booking-tutor-rate">Rp 0 / jam</span>)
+          </p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-booking-close" aria-label="Tutup Formulir">
+          <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+        </button>
+      </div>
+
+      <form id="booking-submission-form">
+        <div class="modal-body">
+          <input type="hidden" id="booking-tutor-id" value="" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-student-name" class="form-label">Nama Siswa <span class="required">*</span></label>
+              <input type="text" id="booking-student-name" class="form-control" placeholder="Cth: Budi Santoso" required />
+            </div>
+            <div class="form-group">
+              <label for="booking-student-email" class="form-label">Email Kontak <span class="required">*</span></label>
+              <input type="email" id="booking-student-email" class="form-control" placeholder="budi@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-subject" class="form-label">Mata Pelajaran <span class="required">*</span></label>
+              <select id="booking-subject" class="form-control" required>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="booking-mode" class="form-label">Metode Belajar <span class="required">*</span></label>
+              <select id="booking-mode" class="form-control" required>
+                <option value="Online">Online (Google Meet Interaktif)</option>
+                <option value="Tatap Muka">Tatap Muka di Rumah</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-date" class="form-label">Tanggal Sesi <span class="required">*</span></label>
+              <input type="date" id="booking-date" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="booking-time" class="form-label">Waktu Mulai <span class="required">*</span></label>
+              <select id="booking-time" class="form-control" required>
+                <option value="16:00 - 18:00 WIB">16:00 - 18:00 WIB</option>
+                <option value="19:00 - 21:00 WIB">19:00 - 21:00 WIB</option>
+                <option value="09:00 - 11:00 WIB (Pagi)">09:00 - 11:00 WIB (Pagi)</option>
+                <option value="13:30 - 15:30 WIB (Siang)">13:30 - 15:30 WIB (Siang)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-duration" class="form-label">Durasi Pertemuan</label>
+            <select id="booking-duration" class="form-control">
+              <option value="2" selected>2 Jam Pelajaran (Rekomendasi Efektif)</option>
+              <option value="1">1 Jam Pelajaran (Sesi Singkat)</option>
+              <option value="3">3 Jam Pelajaran (Intensif Bedah Soal)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-notes" class="form-label">Materi / Bab Khusus yang Ingin Dipelajari</label>
+            <textarea id="booking-notes" class="form-control" rows="3" placeholder="Contoh: Fokus pada soal penalaran matematika dan turunan aljabar persiapan ujian sekolah."></textarea>
+          </div>
+
+          <div style="background: var(--navy-50); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.875rem; color: var(--navy-700); font-weight: 600;">Estimasi Biaya Sesi:</span>
+            <span id="booking-fee-estimate" style="font-size: 1.125rem; font-weight: 800; color: var(--primary-700);">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="modal-booking-cancel">Batal</button>
+          <button type="submit" class="btn btn-primary">Kirim Pengajuan Sesi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== 10. GLOBAL FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Col -->
+        <div>
+          <a href="index.html" class="brand-logo" style="color: #ffffff;">
+            <div class="brand-icon-box">
+              <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+            </div>
+            <span>Edu<span style="color: #38bdf8;">Kita</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            Platform les privat dan bimbingan belajar kurasi terdepan di Indonesia. Menghubungkan siswa berprestasi dengan pengajar terbaik dari kampus ternama.
+          </p>
+          <div style="display: flex; gap: 0.75rem; color: #ffffff;">
+            <span style="font-size: 0.8125rem; background: rgba(255,255,255,0.1); padding: 0.35rem 0.75rem; border-radius: 999px;">
+              🇮🇩 Untuk Pendidikan Indonesia Maju
+            </span>
+          </div>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h4 class="footer-title">Jelajahi EduKita</h4>
+          <ul class="footer-links-list">
+            <li><a href="pages/cari-tutor.html" class="footer-link">Cari Semua Tutor</a></li>
+            <li><a href="pages/cari-tutor.html?kategori=UTBK/SNBT" class="footer-link">Persiapan UTBK/SNBT</a></li>
+            <li><a href="pages/cari-tutor.html?kategori=Matematika" class="footer-link">Tutor Matematika</a></li>
+            <li><a href="pages/register-tutor.html" class="footer-link">Gabung Menjadi Tutor</a></li>
+            <li><a href="pages/tentang-kami.html" class="footer-link">Tentang Kami</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div>
+          <h4 class="footer-title">Akun &amp; Panduan</h4>
+          <ul class="footer-links-list">
+            <li><a href="pages/login.html" class="footer-link">Masuk ke Akun</a></li>
+            <li><a href="pages/register.html" class="footer-link">Pendaftaran Siswa Baru</a></li>
+            <li><a href="pages/dashboard-siswa.html" class="footer-link">Dashboard Siswa</a></li>
+            <li><a href="pages/dashboard-tutor.html" class="footer-link">Dashboard Tutor</a></li>
+            <li><a href="#faq" class="footer-link">Pusat Bantuan &amp; FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 3 -->
+        <div>
+          <h4 class="footer-title">Legalitas &amp; Kontak</h4>
+          <ul class="footer-links-list">
+            <li><a href="pages/kebijakan-privasi.html" class="footer-link">Kebijakan Privasi</a></li>
+            <li><a href="pages/syarat-ketentuan.html" class="footer-link">Syarat &amp; Ketentuan</a></li>
+            <li style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--navy-300);">
+              📍 Jakarta Selatan, DKI Jakarta<br />
+              ✉️ kontak@edukita.id<br />
+              💬 WhatsApp: +62 812-3456-7890
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 EduKita Indonesia. Hak Cipta Dilindungi Undang-Undang.</p>
+        <p style="color: var(--navy-400);">
+          Demonstrasi Frontend Mandiri (Pure HTML, Vanilla CSS &amp; JavaScript ES6+).
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // Additional initial inline render for featured tutors on index.html
+    document.addEventListener("DOMContentLoaded", () => {
+      const showcaseEl = document.getElementById("featured-tutors-showcase");
+      if (showcaseEl && typeof EDUKITA_TUTORS !== "undefined") {
+        showcaseEl.innerHTML = EDUKITA_TUTORS.slice(0, 3).map(t => renderTutorCardHTML(t, false)).join("");
+        if (window.lucide) window.lucide.createIcons();
+        if (typeof attachBookingModalTriggers === "function") attachBookingModalTriggers();
+      }
+    });
+  </script>
+</body>
+</html>

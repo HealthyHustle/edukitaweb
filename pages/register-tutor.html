@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pendaftaran Mitra Tutor EduKita - Dapatkan penghasilan fleksibel dan bimbing generasi muda Indonesia meraih prestasi." />
+  <meta name="theme-color" content="#0284c7" />
+  <title>Daftar Jadi Mitra Tutor - EduKita</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" aria-label="EduKita Beranda">
+        <div class="brand-icon-box">
+          <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">Beranda</a>
+        <a href="cari-tutor.html" class="nav-item">Cari Tutor</a>
+        <a href="register-tutor.html" class="nav-item active">Jadi Tutor</a>
+        <a href="tentang-kami.html" class="nav-item">Tentang Kami</a>
+      </nav>
+
+      <div class="nav-auth nav-auth-slot">
+        <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Daftar Akun</a>
+      </div>
+
+      <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Buka Menu">
+        <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon-box" style="width: 36px; height: 36px;">
+          <i data-lucide="graduation-cap" style="width: 20px; height: 20px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </div>
+      <button type="button" class="modal-close-btn" id="mobile-drawer-close">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="../index.html" class="nav-item">Beranda</a>
+      <a href="cari-tutor.html" class="nav-item">Cari Tutor</a>
+      <a href="register-tutor.html" class="nav-item active">Jadi Tutor</a>
+      <a href="tentang-kami.html" class="nav-item">Tentang Kami</a>
+    </div>
+
+    <div class="nav-auth-slot" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="login.html" class="btn btn-secondary btn-block">Masuk</a>
+      <a href="register.html" class="btn btn-primary btn-block">Daftar Akun</a>
+    </div>
+  </aside>
+
+  <main class="auth-wrapper" style="padding: 4rem 1.5rem;">
+    <div class="auth-card auth-card-wide">
+      <div class="auth-header">
+        <span class="badge badge-primary" style="margin-bottom: 0.75rem;">Kemitraan Edukator</span>
+        <h1 class="auth-title">Formulir Pendaftaran Mitra Tutor</h1>
+        <p class="auth-subtitle">
+          Bergabunglah dengan jaringan pengajar terpercaya di Indonesia. Dapatkan murid baru dengan jadwal dan tarif yang kamu tentukan sendiri.
+        </p>
+      </div>
+
+      <form id="tutor-registration-form">
+        <!-- Section 1: Data Diri -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.125rem; font-weight: 800; color: var(--navy-900); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="user" style="color: var(--primary-500); width: 20px; height: 20px;"></i>
+            1. Informasi Data Pribadi
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tutor-reg-name" class="form-label">Nama Lengkap &amp; Gelar <span class="required">*</span></label>
+              <input type="text" id="tutor-reg-name" class="form-control" placeholder="Cth: Rizky Megantara" required />
+            </div>
+            <div class="form-group">
+              <label for="tutor-reg-email" class="form-label">Email Aktif <span class="required">*</span></label>
+              <input type="email" id="tutor-reg-email" class="form-control" placeholder="megantara@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tutor-reg-phone" class="form-label">Nomor WhatsApp / HP <span class="required">*</span></label>
+              <input type="tel" id="tutor-reg-phone" class="form-control" placeholder="08123456789" required />
+            </div>
+            <div class="form-group">
+              <label for="tutor-reg-city" class="form-label">Kota Domisili Saat Ini <span class="required">*</span></label>
+              <input type="text" id="tutor-reg-city" class="form-control" placeholder="Cth: Jakarta Selatan / Bandung" required />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Kualifikasi Akademik -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.125rem; font-weight: 800; color: var(--navy-900); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="graduation-cap" style="color: var(--primary-500); width: 20px; height: 20px;"></i>
+            2. Kualifikasi Pendidikan &amp; Almamater
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tutor-reg-univ" class="form-label">Perguruan Tinggi / Universitas <span class="required">*</span></label>
+              <input type="text" id="tutor-reg-univ" class="form-control" placeholder="Cth: Universitas Indonesia / ITB / UGM" required />
+            </div>
+            <div class="form-group">
+              <label for="tutor-reg-major" class="form-label">Program Studi / Jurusan <span class="required">*</span></label>
+              <input type="text" id="tutor-reg-major" class="form-control" placeholder="Cth: Matematika / Teknik Elektro" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tutor-reg-degree" class="form-label">Status Pendidikan Terakhir</label>
+              <select id="tutor-reg-degree" class="form-control">
+                <option value="S1 Sedang Berjalan">Mahasiswa Aktif (S1)</option>
+                <option value="S1 Lulus" selected>Lulusan Sarjana (S1)</option>
+                <option value="S2 Sedang Berjalan / Lulus">Magister / Pascasarjana (S2)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tutor-reg-gpa" class="form-label">IPK Terakhir (Skala 4.00)</label>
+              <input type="text" id="tutor-reg-gpa" class="form-control" placeholder="Cth: 3.82" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Bidang Pengajaran & Tarif -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.125rem; font-weight: 800; color: var(--navy-900); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="book-open" style="color: var(--primary-500); width: 20px; height: 20px;"></i>
+            3. Spesialisasi Pengajaran &amp; Tarif
+          </h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tutor-reg-subject" class="form-label">Mata Pelajaran Utama <span class="required">*</span></label>
+              <select id="tutor-reg-subject" class="form-control" required>
+                <option value="Matematika">Matematika (SD/SMP/SMA)</option>
+                <option value="UTBK/SNBT">Persiapan UTBK / SNBT</option>
+                <option value="Fisika">Fisika</option>
+                <option value="Kimia">Kimia</option>
+                <option value="Biologi">Biologi</option>
+                <option value="Bahasa Inggris">Bahasa Inggris (TOEFL/IELTS)</option>
+                <option value="Coding / Informatika">Coding &amp; Informatika</option>
+                <option value="Ekonomi & Akuntansi">Ekonomi &amp; Akuntansi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tutor-reg-rate" class="form-label">Tarif Mengajar yang Diinginkan (/jam) <span class="required">*</span></label>
+              <select id="tutor-reg-rate" class="form-control" required>
+                <option value="85000">Rp 85.000 / jam</option>
+                <option value="100000">Rp 100.000 / jam</option>
+                <option value="120000" selected>Rp 120.000 / jam</option>
+                <option value="150000">Rp 150.000 / jam</option>
+                <option value="200000">Rp 200.000 / jam</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Metode Pembelajaran yang Siap Diberikan</label>
+            <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; cursor: pointer;">
+                <input type="checkbox" checked style="accent-color: var(--primary-600);" />
+                <span>Kelas Daring Online (Google Meet)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; cursor: pointer;">
+                <input type="checkbox" checked style="accent-color: var(--primary-600);" />
+                <span>Tatap Muka di Rumah Siswa (Offline)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Document Upload Simulation -->
+          <div class="form-group">
+            <label for="tutor-cv-file" class="form-label">Unggah CV / Ijazah / Transkrip (PDF / JPG)</label>
+            <input type="file" id="tutor-cv-file" class="form-control" accept=".pdf,.png,.jpg,.jpeg" />
+            <span class="form-hint" id="cv-file-name">Maksimal ukuran berkas 5MB. Digunakan untuk verifikasi tim kurasi EduKita.</span>
+          </div>
+        </div>
+
+        <!-- Section 4: Agreement -->
+        <div style="margin-bottom: 2rem;">
+          <label style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: var(--navy-700); cursor: pointer;">
+            <input type="checkbox" id="tutor-reg-agree" required style="margin-top: 3px; accent-color: var(--primary-600);" />
+            <span>
+              Saya menyatakan bahwa data yang diisi adalah benar, bersedia mematuhi Kode Etik Pengajar EduKita, dan siap mengikuti simulasi <em>micro-teaching</em> jika dinyatakan lolos tahap administrasi.
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          Kirim Pendaftaran Mitra Tutor
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>© 2026 EduKita Indonesia. Hak Cipta Dilindungi.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="../index.html" class="footer-link">Beranda</a>
+          <a href="cari-tutor.html" class="footer-link">Cari Tutor</a>
+          <a href="tentang-kami.html" class="footer-link">Tentang Kami</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

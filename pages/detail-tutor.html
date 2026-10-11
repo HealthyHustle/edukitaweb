@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detail profil tutor privat EduKita - Riwayat pendidikan, pengalaman mengajar, silabus materi, jadwal tersedia, dan ulasan siswa asli." />
+  <meta name="theme-color" content="#0284c7" />
+  <title>Profil Tutor - EduKita</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" aria-label="EduKita Beranda">
+        <div class="brand-icon-box">
+          <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi Utama">
+        <a href="../index.html" class="nav-item">Beranda</a>
+        <a href="cari-tutor.html" class="nav-item active">Cari Tutor</a>
+        <a href="../index.html#kategori" class="nav-item">Mata Pelajaran</a>
+        <a href="register-tutor.html" class="nav-item">Jadi Tutor</a>
+        <a href="tentang-kami.html" class="nav-item">Tentang Kami</a>
+      </nav>
+
+      <div class="nav-auth nav-auth-slot">
+        <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Daftar Akun</a>
+      </div>
+
+      <button type="button" class="menu-toggle" id="mobile-menu-toggle" aria-label="Buka Menu">
+        <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon-box" style="width: 36px; height: 36px;">
+          <i data-lucide="graduation-cap" style="width: 20px; height: 20px;"></i>
+        </div>
+        <span>Edu<span>Kita</span></span>
+      </div>
+      <button type="button" class="modal-close-btn" id="mobile-drawer-close">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a href="../index.html" class="nav-item">Beranda</a>
+      <a href="cari-tutor.html" class="nav-item active">Cari Tutor</a>
+      <a href="register-tutor.html" class="nav-item">Jadi Tutor</a>
+      <a href="tentang-kami.html" class="nav-item">Tentang Kami</a>
+    </div>
+
+    <div class="nav-auth-slot" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="login.html" class="btn btn-secondary btn-block">Masuk</a>
+      <a href="register.html" class="btn btn-primary btn-block">Daftar Akun</a>
+    </div>
+  </aside>
+
+  <main class="section-sm">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 2rem;">
+        <a href="../index.html" style="color: var(--primary-600);">Beranda</a>
+        <span>/</span>
+        <a href="cari-tutor.html" style="color: var(--primary-600);">Cari Tutor</a>
+        <span>/</span>
+        <span style="color: var(--navy-800); font-weight: 600;">Profil Tutor</span>
+      </div>
+
+      <!-- Container dynamically populated by script.js initTutorDetail() -->
+      <div id="tutor-detail-content">
+        <div style="text-align: center; padding: 4rem 0;">
+          <p style="color: var(--text-muted);">Memuat profil tutor...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Booking Modal Component -->
+  <div class="edukita-modal" id="edukita-booking-modal" role="dialog" aria-labelledby="modal-booking-heading">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modal-booking-heading">Ajukan Sesi Belajar</h3>
+          <p style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.2rem;">
+            Bersama: <strong id="modal-booking-tutor-name">Nama Tutor</strong> (<span id="modal-booking-tutor-rate">Rp 0 / jam</span>)
+          </p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-booking-close" aria-label="Tutup Formulir">
+          <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+        </button>
+      </div>
+
+      <form id="booking-submission-form">
+        <div class="modal-body">
+          <input type="hidden" id="booking-tutor-id" value="" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-student-name" class="form-label">Nama Siswa <span class="required">*</span></label>
+              <input type="text" id="booking-student-name" class="form-control" placeholder="Cth: Budi Santoso" required />
+            </div>
+            <div class="form-group">
+              <label for="booking-student-email" class="form-label">Email Kontak <span class="required">*</span></label>
+              <input type="email" id="booking-student-email" class="form-control" placeholder="budi@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-subject" class="form-label">Mata Pelajaran <span class="required">*</span></label>
+              <select id="booking-subject" class="form-control" required>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="booking-mode" class="form-label">Metode Belajar <span class="required">*</span></label>
+              <select id="booking-mode" class="form-control" required>
+                <option value="Online">Online (Google Meet Interaktif)</option>
+                <option value="Tatap Muka">Tatap Muka di Rumah</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-date" class="form-label">Tanggal Sesi <span class="required">*</span></label>
+              <input type="date" id="booking-date" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="booking-time" class="form-label">Waktu Mulai <span class="required">*</span></label>
+              <select id="booking-time" class="form-control" required>
+                <option value="16:00 - 18:00 WIB">16:00 - 18:00 WIB</option>
+                <option value="19:00 - 21:00 WIB">19:00 - 21:00 WIB</option>
+                <option value="09:00 - 11:00 WIB (Pagi)">09:00 - 11:00 WIB (Pagi)</option>
+                <option value="13:30 - 15:30 WIB (Siang)">13:30 - 15:30 WIB (Siang)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-duration" class="form-label">Durasi Pertemuan</label>
+            <select id="booking-duration" class="form-control">
+              <option value="2" selected>2 Jam Pelajaran (Rekomendasi Efektif)</option>
+              <option value="1">1 Jam Pelajaran (Sesi Singkat)</option>
+              <option value="3">3 Jam Pelajaran (Intensif Bedah Soal)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="booking-notes" class="form-label">Materi / Bab Khusus yang Ingin Dipelajari</label>
+            <textarea id="booking-notes" class="form-control" rows="3" placeholder="Contoh: Fokus pada soal penalaran matematika dan turunan aljabar persiapan ujian sekolah."></textarea>
+          </div>
+
+          <div style="background: var(--navy-50); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.875rem; color: var(--navy-700); font-weight: 600;">Estimasi Biaya Sesi:</span>
+            <span id="booking-fee-estimate" style="font-size: 1.125rem; font-weight: 800; color: var(--primary-700);">Rp 0</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="modal-booking-cancel">Batal</button>
+          <button type="submit" class="btn btn-primary">Kirim Pengajuan Sesi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>© 2026 EduKita Indonesia. Hak Cipta Dilindungi Undang-Undang.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="../index.html" class="footer-link">Beranda</a>
+          <a href="cari-tutor.html" class="footer-link">Cari Tutor</a>
+          <a href="register-tutor.html" class="footer-link">Jadi Tutor</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
